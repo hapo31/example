@@ -1,0 +1,27 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <button class="audio-play">ボタン1</button>
+    <button class="audio-play">ボタン2</button>
+    <button class="audio-play">ボタン3</button>
+    <button class="audio-play">ボタン4</button>
+
+    <script>
+      const audios = ["tada.wav", "ringout.wav", "recycle.wav", "notify.wav"];
+      const buttons = document.getElementsByClassName("audio-play");
+
+      let i = 0;
+      for (const btn of buttons) {
+        const audio = document.createElement("audio");
+        audio.src = audios[i];
+        btn.onclick = () => {
+          audio.play();
+        };
+        document.body.appendChild(audio);
+        ++i;
+      }
+    </script>
+  </body>
+</html>
